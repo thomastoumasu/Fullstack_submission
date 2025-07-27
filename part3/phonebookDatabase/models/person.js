@@ -5,7 +5,7 @@ const url = process.env.MONGODB_URI
 mongoose.connect(url)
 console.log('--person.js connecting to', url)
 mongoose.connect(url)
-  .then(result => {
+  .then( () => {
     console.log('--person.js connected to MongoDB')
   })
   .catch(error => {
@@ -28,9 +28,9 @@ const personSchema = new mongoose.Schema({
     validate: [
       {
         validator: v => {
-          return /\d{3}-\d+$/.test(v) || /\d{2}-\d+$/.test(v);
+          return /\d{3}-\d+$/.test(v) || /\d{2}-\d+$/.test(v)
         },
-        message: props => 'should be of the form XX-XXXXX or XXX-XXXX'
+        message: () => 'should be of the form XX-XXXXX or XXX-XXXX'
       },
       {
         validator: v => {
@@ -53,4 +53,4 @@ personSchema.set('toJSON', {
   }
 })
 
-module.exports = mongoose.model('Person', personSchema)
+module.exports = Person
