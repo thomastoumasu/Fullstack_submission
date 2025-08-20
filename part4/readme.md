@@ -1,4 +1,5 @@
 printf '\33c\e[3J';  npm run test
+
 cls ; npm run testselection
 
 npm run lint
