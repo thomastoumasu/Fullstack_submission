@@ -8,7 +8,7 @@ const useField = (type) => {
     setValue(event.target.value)
   }
 
-  const reset = (event) => setValue('');
+  const reset = () => setValue('');
   return [{ type, value, onChange }, reset];
 }
 
@@ -17,7 +17,7 @@ const useResource = (baseUrl) => {
 
   useEffect(() => {
     axios.get(baseUrl).then((res) => setResources(res.data))
-  }, [])
+  }, [baseUrl])
 
   const create = async (resource) => {
     const response = await axios.post(baseUrl, resource)
