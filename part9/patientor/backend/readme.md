@@ -1,2 +1,2 @@
-Ex 9.8 - 9.14
+Ex 9.8 - 9.30
 backend for Patientor
