@@ -57,5 +57,3 @@ Content-Type: application/json
     "criteria": "Thumb has grown again"
   }
 }
-
-

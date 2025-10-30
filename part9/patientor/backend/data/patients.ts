@@ -119,7 +119,7 @@ const patients: Patient[] = data.map(obj => {
     return { ...newEntry, id: entry.id };
   });
   const patient = newPatientSchema.parse(obj); // patient has no entries yet
-  return {...patient, id: obj.id, entries: entries};
+  return { ...patient, id: obj.id, entries: entries };
 });
 
 export default patients;

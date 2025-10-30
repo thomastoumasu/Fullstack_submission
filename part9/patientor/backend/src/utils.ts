@@ -24,19 +24,25 @@ const discharge = z.object({
   criteria: z.string()
 });
 
+export enum EntryType {
+  OccupationalHealthcare = "OccupationalHealthcare",
+  HealthCheck = "HealthCheck",
+  Hospital = "Hospital",
+}
+
 const healthCheckEntrySchema = baseEntrySchema.extend({
-  type: z.literal("HealthCheck"),
+  type: z.literal(EntryType.HealthCheck),
   healthCheckRating: z.nativeEnum(HealthCheckRating)
 });
 
 const occupationalHealthcareEntrySchema = baseEntrySchema.extend({
-  type: z.literal("OccupationalHealthcare"),
+  type: z.literal(EntryType.OccupationalHealthcare),
   employerName: z.string(),
   sickLeave: sickLeave.optional()
 });
 
 const hospitalEntrySchema = baseEntrySchema.extend({
-  type: z.literal("Hospital"),
+  type: z.literal(EntryType.Hospital),
   discharge: discharge
 });
 
