@@ -1,0 +1,13 @@
+
+GET http://localhost:3000/api/diaries
+
+### careful with POST, do not add an empty line before the headers
+POST http://localhost:3000/api/diaries
+Content-Type: application/json
+
+{
+  "date": "01-01-2025",
+  "weather": "cloudy",
+  "visibility": "good",
+  "comment": "hellyeah"
+}
